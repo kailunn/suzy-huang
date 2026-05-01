@@ -1,0 +1,284 @@
+/* ── Manna Slot page ── */
+
+.manna-main {
+  position: relative;
+  z-index: 20;
+  width: min(520px, 86vw);
+  margin: 32px auto 100px;
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55);
+  overflow: hidden;
+}
+
+.manna-body {
+  padding: 22px 26px 28px;
+}
+
+/* Header */
+.manna-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.manna-title {
+  font-size: 1.15rem;
+  color: var(--yellow);
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.manna-crown {
+  color: var(--yellow);
+  font-size: 0.9rem;
+  animation: crownPulse 2s ease-in-out infinite;
+}
+
+.manna-crown:last-child { animation-delay: -1s; }
+
+@keyframes crownPulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+.manna-subtitle {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--dim);
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+
+/* ── Slot machine ── */
+.slot-machine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.slot-reels {
+  display: flex;
+  gap: 10px;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.4),
+              0 2px 12px rgba(0,0,0,0.3);
+}
+
+.slot-reel {
+  width: 64px;
+  height: 64px;
+  background: var(--bg2);
+  border: 1.5px solid var(--sticker-border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.35);
+}
+
+.reel-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.1s;
+}
+
+.reel-inner span {
+  font-size: 1.8rem;
+  line-height: 1;
+  display: block;
+  text-align: center;
+}
+
+.reel-inner.landed {
+  animation: reelLand 0.35s ease;
+}
+
+@keyframes reelLand {
+  0%   { transform: scale(1.3); }
+  60%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* ── Lever button ── */
+.slot-lever {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 2px solid var(--yellow);
+  border-radius: 50px;
+  padding: 11px 28px;
+  color: var(--yellow);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 0 16px rgba(196,169,106,0.2);
+  animation: leverGlow 2.5s ease-in-out infinite;
+}
+
+.slot-lever:hover:not(:disabled) {
+  background: rgba(196,169,106,0.12);
+  transform: scale(1.05);
+  box-shadow: 0 0 28px rgba(196,169,106,0.4);
+}
+
+.slot-lever:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.slot-lever:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.slot-lever.spinning .lever-icon {
+  animation: leverPray 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes leverGlow {
+  0%, 100% { box-shadow: 0 0 16px rgba(196,169,106,0.2); }
+  50%       { box-shadow: 0 0 28px rgba(196,169,106,0.4); }
+}
+
+@keyframes leverPray {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-4px); }
+}
+
+.lever-icon { font-size: 1.1rem; }
+
+/* ── Verse display ── */
+.verse-display {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  transition: border-color 0.3s;
+}
+
+.verse-idle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--dim);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  font-style: italic;
+}
+
+.verse-idle-icon {
+  font-size: 1.6rem;
+  opacity: 0.4;
+  animation: cloudFloat 4s ease-in-out infinite;
+}
+
+@keyframes cloudFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+
+.verse-spinning {
+  color: var(--dim);
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+}
+
+.spin-dots {
+  animation: dotPulse 0.8s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
+
+/* Verse result */
+.verse-result {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: verseReveal 0.5s ease;
+  width: 100%;
+}
+
+@keyframes verseReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.verse-text {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.8;
+  text-align: center;
+  font-style: italic;
+  border-left: 3px solid var(--cat-color, var(--yellow));
+  padding-left: 14px;
+  text-align: left;
+}
+
+.verse-ref {
+  font-size: 0.7rem;
+  color: var(--cat-color, var(--yellow));
+  letter-spacing: 0.06em;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Category badge */
+.verse-category {
+  display: inline-block;
+  font-size: 0.65rem;
+  color: var(--cat-color, var(--yellow));
+  border: 1px solid var(--cat-color, var(--yellow));
+  border-radius: 20px;
+  padding: 3px 12px;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Pull count */
+.pull-count {
+  font-size: 0.62rem;
+  color: var(--dim);
+  letter-spacing: 0.06em;
+  text-align: center;
+  min-height: 16px;
+  margin-bottom: 18px;
+}
+
+/* Back */
+.manna-back {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

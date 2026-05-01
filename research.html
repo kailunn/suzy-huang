@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suzy's Research</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="research.css" />
+</head>
+<body class="research-page">
+
+  <!-- floating stickers -->
+  <img class="sticker-img" src="photos/stickers/me2.png" alt="Suzy"
+       style="top:5%; left:2%; --rot:-6deg; --sz:160px;" data-tip="researcher mode" />
+  <img class="sticker-img" src="photos/stickers/cat1.png" alt="cat"
+       style="top:5%; right:2%; --rot:7deg; --sz:165px;" data-tip="peer reviewer 🐱" />
+  <img class="sticker-img" src="photos/stickers/me5.png" alt="Suzy"
+       style="bottom:10%; left:2%; --rot:5deg; --sz:155px;" data-tip="Suzy" />
+  <img class="sticker-img" src="photos/stickers/cat3.png" alt="cat"
+       style="bottom:10%; right:2%; --rot:-7deg; --sz:160px;" data-tip="lab assistant" />
+
+  <main class="research-main">
+    <div class="terminal-bar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">suzy@huang ~ research</span>
+    </div>
+
+    <div class="research-body">
+      <div class="prompt-line">
+        <span class="prompt">~/research_</span>
+        <span class="cursor">▋</span>
+      </div>
+
+      <h1 class="research-title">Research</h1>
+      <p class="research-intro">
+        I work at the intersection of <em>signal processing</em>, <em>machine learning</em>,
+        and <em>non-destructive testing</em> — teaching machines to see what the naked eye can't.
+      </p>
+
+      <!-- ── Paper 1 ── -->
+      <article class="paper-card">
+        <div class="paper-tag">Published · IOP Measurement Science &amp; Technology · 2021</div>
+        <h2 class="paper-title">
+          Can Math See Through Walls?
+          <span class="paper-subtitle">Exploratory Factor Analysis for Defect Identification with Active Thermography</span>
+        </h2>
+
+        <div class="paper-essay">
+          <p>
+            Imagine you're building an airplane wing out of carbon fiber. It looks perfect on the outside —
+            smooth, strong, flawless. But somewhere inside, hidden between layers thinner than a fingernail,
+            there's a tiny void. A bubble. A crack waiting to happen at 35,000 feet.
+          </p>
+          <p>
+            You can't cut it open to check. So how do you find it?
+          </p>
+
+          <!-- Figure: defect locations -->
+          <div class="paper-figure">
+            <img src="research_figs/fig3_defect_locations.jpg" alt="Defect locations in CFRP specimen" />
+            <p class="fig-caption">The hidden targets — artificial subsurface defects (round + triangular) buried inside a carbon fiber plate. This is what we're trying to find without cutting anything open.</p>
+          </div>
+
+          <p>
+            You flash it with heat and watch how the surface cools. Defects cool differently than solid
+            material. An infrared camera captures the temperature change across hundreds of frames.
+            The problem? The signal is buried in noise and uneven heating gradients — like trying to
+            hear a whisper in a stadium.
+          </p>
+
+          <!-- Figure: raw thermograms -->
+          <div class="paper-figure">
+            <img src="research_figs/fig4_raw_thermograms.jpg" alt="Raw thermograms showing noise" />
+            <p class="fig-caption">Raw thermal images at different time points. The defects are in there — but you'd never know it from looking. This is the mess we start with.</p>
+          </div>
+
+          <p>
+            Existing methods like Sparse PCT can clean up the signal — but require manually tuning a
+            parameter. Get it wrong and you miss the defect or hallucinate one. This paper proposes
+            <em>Exploratory Factor Analysis (EFA)</em> with orthogonal rotation: no tuning knobs,
+            no guesswork. EFA rotates its own axes to find the most interpretable view of the data
+            and automatically isolates defect signals from background noise.
+          </p>
+
+          <!-- Figure: EFA equamax result -->
+          <div class="paper-figure">
+            <img src="research_figs/fig7_efa_equamax.jpg" alt="EFA equamax rotation result" />
+            <p class="fig-caption">EFA with equamax rotation — the defects emerge clearly from the noise. Both shapes (round + triangular) are visible with sharp edges. No parameters were tuned to get this.</p>
+          </div>
+
+          <!-- Figure: SNR comparison -->
+          <div class="paper-figure">
+            <img src="research_figs/fig13_snr_bar.jpg" alt="SNR comparison bar chart" />
+            <p class="fig-caption">Signal-to-noise ratio across all methods. EFA (equamax) matches the best hand-tuned SPCT result — fully automatically. Higher = cleaner defect detection.</p>
+          </div>
+
+          <p>
+            Tested on two real CFRP specimens, EFA matched the best-case SPCT without anyone guessing
+            a single parameter. One less thing to get wrong. One step closer to machines that can
+            inspect themselves.
+          </p>
+        </div>
+
+        <div class="paper-meta">
+          <span class="paper-authors">Kai-Lun Huang, Stefano Sfarra, Ching-Mei Wen, Yuan Yao, Chunhui Zhao</span>
+          <a class="paper-link" href="https://iopscience.iop.org/article/10.1088/1361-6501/ac17f9" target="_blank" rel="noopener">read paper →</a>
+        </div>
+      </article>
+
+      <!-- ── Paper 2 ── -->
+      <article class="paper-card">
+        <div class="paper-tag">Conference · QIRT 2020 · Quantitative InfraRed Thermography</div>
+        <h2 class="paper-title">
+          Teaching Thermography to Think
+          <span class="paper-subtitle">Factor Analysis Thermography for Automatic Defect Feature Extraction</span>
+        </h2>
+
+        <div class="paper-essay">
+          <p>
+            Every inspection method has a dirty secret: somewhere in the pipeline, a human has to make
+            a judgment call. Is that blob a defect or just uneven heating? Is that shadow a crack or
+            a reflection?
+          </p>
+          <p>
+            What if we could remove that judgment call entirely?
+          </p>
+          <p>
+            This work introduces <em>Factor Analysis Thermography (FAT)</em> — a method that takes the
+            raw flood of thermal images and automatically extracts the features that matter, without
+            being told what to look for. No labels. No prior knowledge of defect geometry. No parameter
+            tuning.
+          </p>
+          <p>
+            The key insight: defects create correlated patterns across time in thermal data. Factor
+            analysis finds exactly those hidden correlations. By applying it to the unfolded
+            thermographic data matrix, FAT surfaces defect signatures that are statistically distinct
+            from background variation — and presents them as clean, interpretable loading images.
+          </p>
+          <p>
+            Think of it as giving the data a chance to tell its own story. Instead of forcing it
+            through a model with assumptions baked in, FAT listens. And what it hears, more often
+            than not, is the shape of something that shouldn't be there.
+          </p>
+          <p>
+            Presented at the international QIRT conference, this work laid the conceptual groundwork
+            for the more rigorous EFA study that followed — an early, clear articulation of why
+            parameter-free methods matter in real-world non-destructive testing.
+          </p>
+        </div>
+
+        <div class="paper-meta">
+          <span class="paper-authors">Kai-Lun Huang et al. · QIRT 2020</span>
+          <a class="paper-link" href="http://www.qirt.org/archives/qirt2020/papers/004.pdf" target="_blank" rel="noopener">read paper →</a>
+        </div>
+      </article>
+
+      <div class="research-back">
+        <a class="btn-link" href="index.html">← back to home</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Email bar -->
+  <div class="email-bar">
+    <span class="email-bar-label">✉ reach me</span>
+    <a class="email-pill" href="mailto:kl.suzy.huang@gmail.com">
+      <span class="email-pill-icon">◈</span>kl.suzy.huang@gmail.com
+    </a>
+    <span class="email-bar-sep">·</span>
+    <a class="email-pill edu" href="mailto:kl.huang@csu.fullerton.edu">
+      <span class="email-pill-icon">🎓</span>kl.huang@csu.fullerton.edu
+    </a>
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+  <script src="main.js"></script>
+</body>
+</html>

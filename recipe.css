@@ -1,0 +1,92 @@
+/* ── Recipe page ── */
+
+.recipe-terminal {
+  width: min(560px, 88vw);
+}
+
+.recipe-header {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--yellow);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.recipe-sub {
+  font-size: 0.75rem;
+  color: var(--dim);
+  margin-bottom: 22px;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+}
+
+.recipe-section-title {
+  font-size: 0.7rem;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+  margin: 20px 0 8px;
+  text-transform: lowercase;
+}
+
+/* Prose paragraphs */
+.recipe-prose {
+  font-size: 0.83rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.recipe-prose em {
+  color: var(--yellow);
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Pour steps */
+.pour-steps {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pour-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 12px;
+  background: var(--bg);
+  border-radius: 8px;
+  border-left: 3px solid var(--yellow);
+}
+
+.pour-n {
+  font-size: 0.7rem;
+  color: var(--green);
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  min-width: 20px;
+}
+
+.pour-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pour-detail strong {
+  font-size: 0.9rem;
+  color: var(--yellow);
+}
+
+.pour-detail span {
+  font-size: 0.72rem;
+  color: var(--dim);
+}
+
+/* Back button */
+.recipe-back {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}

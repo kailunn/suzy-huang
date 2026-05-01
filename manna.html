@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manna Slot</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="manna.css" />
+</head>
+<body class="manna-page">
+
+  <!-- floating stickers -->
+  <img class="sticker-img" src="photos/stickers/cat4.png" alt="cat"
+       style="top:5%; left:2%; --rot:-7deg; --sz:155px;" data-tip="praying 🙏" />
+  <img class="sticker-img" src="photos/stickers/me2.png" alt="Suzy"
+       style="top:5%; right:2%; --rot:6deg; --sz:150px;" data-tip="Suzy" />
+  <img class="sticker-img" src="photos/stickers/cat5.png" alt="cat"
+       style="bottom:10%; left:2%; --rot:5deg; --sz:150px;" data-tip="amen 🐱" />
+  <img class="sticker-img" src="photos/stickers/me5.png" alt="Suzy"
+       style="bottom:10%; right:2%; --rot:-6deg; --sz:148px;" data-tip="Suzy" />
+
+  <main class="manna-main">
+    <div class="terminal-bar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">suzy@huang ~ manna-slot</span>
+    </div>
+
+    <div class="manna-body">
+      <div class="prompt-line">
+        <span class="prompt">~/manna_</span>
+        <span class="cursor">▋</span>
+      </div>
+
+      <div class="manna-header">
+        <span class="manna-crown">✦</span>
+        <h1 class="manna-title">Manna Slot</h1>
+        <span class="manna-crown">✦</span>
+      </div>
+      <p class="manna-subtitle">daily bread for the soul — pull the lever, receive a word</p>
+
+      <!-- Slot machine -->
+      <div class="slot-machine" id="slotMachine">
+        <div class="slot-reels">
+          <div class="slot-reel" id="reel1">
+            <div class="reel-inner" id="reelInner1">
+              <span>✦</span>
+            </div>
+          </div>
+          <div class="slot-reel" id="reel2">
+            <div class="reel-inner" id="reelInner2">
+              <span>✝</span>
+            </div>
+          </div>
+          <div class="slot-reel" id="reel3">
+            <div class="reel-inner" id="reelInner3">
+              <span>✦</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="slot-lever" id="slotBtn" aria-label="Pull the lever">
+          <span class="lever-icon">🙏</span>
+          <span class="lever-text">receive a word</span>
+        </button>
+      </div>
+
+      <!-- Verse display -->
+      <div class="verse-display" id="verseDisplay" aria-live="polite">
+        <div class="verse-idle">
+          <span class="verse-idle-icon">☁</span>
+          <span>pull the lever for your daily manna</span>
+        </div>
+      </div>
+
+      <!-- Category badge -->
+      <div class="verse-category" id="verseCategory" style="display:none;"></div>
+
+      <!-- Pull count -->
+      <div class="pull-count" id="pullCount"></div>
+
+      <div class="manna-back">
+        <a class="btn-link" href="index.html">← back to home</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Email bar -->
+  <div class="email-bar">
+    <span class="email-bar-label">✉ reach me</span>
+    <a class="email-pill" href="mailto:kl.suzy.huang@gmail.com">
+      <span class="email-pill-icon">◈</span>kl.suzy.huang@gmail.com
+    </a>
+    <span class="email-bar-sep">·</span>
+    <a class="email-pill edu" href="mailto:kl.huang@csu.fullerton.edu">
+      <span class="email-pill-icon">🎓</span>kl.huang@csu.fullerton.edu
+    </a>
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+  <script src="manna.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

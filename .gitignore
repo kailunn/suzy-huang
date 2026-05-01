@@ -1,0 +1,12 @@
+# Original high-res photos — not needed for the web
+photos/*.HEIC
+photos/*.jpg
+photos/cropped/
+
+# Python processing scripts
+process_photos.py
+__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suzy's Golden Coffee Recipe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="recipe.css" />
+</head>
+<body class="recipe-page">
+
+  <!-- floating stickers -->
+  <img class="sticker-img" src="photos/stickers/cat4.png" alt="calico cat"
+       style="top:6%; left:3%; --rot:-7deg; --sz:180px;" data-tip="supervising ☕" />
+  <img class="sticker-img" src="photos/stickers/cat5.png" alt="calico cat"
+       style="top:6%; right:3%; --rot:6deg; --sz:173px;" data-tip="quality control" />
+  <img class="sticker-img" src="photos/stickers/cat6.png" alt="calico cat"
+       style="bottom:10%; left:3%; --rot:5deg; --sz:180px;" data-tip="taste tester" />
+  <img class="sticker-img" src="photos/stickers/me4.png" alt="Suzy"
+       style="bottom:10%; right:3%; --rot:-8deg; --sz:165px;" data-tip="the barista" />
+
+  <!-- Recipe terminal -->
+  <main class="terminal recipe-terminal">
+    <div class="terminal-bar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">suzy@huang ~ golden-coffee-recipe</span>
+    </div>
+
+    <div class="terminal-body">
+      <div class="prompt-line">
+        <span class="prompt">~/brew-recipe_</span>
+        <span class="cursor">▋</span>
+      </div>
+
+      <div class="recipe-header">✦ Suzy's Golden Coffee Recipe</div>
+      <div class="recipe-sub">a smooth, chocolatey South American cup — perfected over many mornings ☕</div>
+
+      <div class="recipe-section-title">// what you need</div>
+      <p class="recipe-prose">
+        Start with <em>18g</em> of freshly ground South American beans — medium-fine grind.
+        Heat your water to exactly <em>82°C</em>. Any hotter and you'll scorch the delicate
+        chocolate notes. Your target is <em>270ml total</em> at a <em>1:15 ratio</em>.
+      </p>
+
+      <div class="recipe-section-title">// the bloom</div>
+      <p class="recipe-prose">
+        Pour just enough water to saturate the grounds — about <em>35–40ml</em> — then wait.
+        Watch the coffee swell up into a beautiful <em>mushroom shape</em> 🍄. This is the
+        bloom, and it takes <em>35 seconds</em>. Don't rush it. The CO₂ escaping means
+        your beans are fresh and the extraction will be even.
+      </p>
+
+      <div class="recipe-section-title">// three-stage pour</div>
+      <p class="recipe-prose">
+        After the bloom, pour in three gentle, circular stages:
+      </p>
+      <div class="pour-steps">
+        <div class="pour-step">
+          <span class="pour-n">01</span>
+          <div class="pour-detail">
+            <strong>40ml</strong>
+            <span>bloom pour — slow and centered</span>
+          </div>
+        </div>
+        <div class="pour-step">
+          <span class="pour-n">02</span>
+          <div class="pour-detail">
+            <strong>110ml</strong>
+            <span>second pour — spiral outward gently</span>
+          </div>
+        </div>
+        <div class="pour-step">
+          <span class="pour-n">03</span>
+          <div class="pour-detail">
+            <strong>120ml</strong>
+            <span>final pour — steady and patient</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-section-title">// the finish</div>
+      <p class="recipe-prose">
+        Everything should drain by <em>2:30</em>. If it's faster, grind finer next time.
+        Slower? Go coarser. When it's right, you'll get a cup that's
+        <em>smooth, round, and gently chocolatey</em> 🍫 — no bitterness, no sourness.
+        Just a really good morning.
+      </p>
+
+      <div class="recipe-back">
+        <a class="btn-link" href="index.html">← back to home</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Email bar -->
+  <div class="email-bar">
+    <span class="email-bar-label">✉ reach me</span>
+    <a class="email-pill" href="mailto:kl.suzy.huang@gmail.com">
+      <span class="email-pill-icon">◈</span>kl.suzy.huang@gmail.com
+    </a>
+    <span class="email-bar-sep">·</span>
+    <a class="email-pill edu" href="mailto:kl.huang@csu.fullerton.edu">
+      <span class="email-pill-icon">🎓</span>kl.huang@csu.fullerton.edu
+    </a>
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+  <script src="main.js"></script>
+</body>
+</html>

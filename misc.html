@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suzy's Misc</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="misc.css" />
+</head>
+<body class="misc-page">
+
+  <!-- floating stickers -->
+  <img class="sticker-img" src="photos/stickers/cat2.png" alt="cat"
+       style="top:5%; left:2%; --rot:-5deg; --sz:165px;" data-tip="vibes curator 🐱" />
+  <img class="sticker-img" src="photos/stickers/me4.png" alt="Suzy"
+       style="top:5%; right:2%; --rot:6deg; --sz:158px;" data-tip="Suzy" />
+  <img class="sticker-img" src="photos/stickers/cat6.png" alt="cat"
+       style="bottom:10%; left:2%; --rot:7deg; --sz:160px;" data-tip="mood" />
+  <img class="sticker-img" src="photos/stickers/me3.png" alt="Suzy"
+       style="bottom:10%; right:2%; --rot:-6deg; --sz:155px;" data-tip="Suzy" />
+
+  <main class="misc-main">
+    <div class="terminal-bar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">suzy@huang ~ misc</span>
+    </div>
+
+    <div class="misc-body">
+      <div class="prompt-line">
+        <span class="prompt">~/misc_</span>
+        <span class="cursor">▋</span>
+      </div>
+
+      <h1 class="misc-title">Misc</h1>
+      <p class="misc-intro">Things that don't fit anywhere else but matter anyway.</p>
+
+      <!-- Currently into -->
+      <div class="misc-section">
+        <div class="misc-section-title">// currently into</div>
+        <div class="misc-grid">
+          <div class="misc-item">
+            <span class="misc-icon">☕</span>
+            <div>
+              <strong>Expresso</strong>
+              <span>I bought a expresso machine recently.</span>
+            </div>
+          </div>
+          <div class="misc-item">
+            <span class="misc-icon">🐱</span>
+            <div>
+              <strong>My 15lbs calico</strong>
+              <span>Keyboard inspector. Lap warmer. CEO of the apartment.</span>
+            </div>
+          </div>
+          <div class="misc-item">
+            <span class="misc-icon">∑</span>
+            <div>
+              <strong>Math for fun</strong>
+              <span>Focal loss, wavelet transform....</span>
+            </div>
+          </div>
+          <div class="misc-item">
+            <span class="misc-icon">📐</span>
+            <div>
+              <strong>System thinking</strong>
+              <span>How things connect, break, and self-organize</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fun facts -->
+      <div class="misc-section">
+        <div class="misc-section-title">// fun facts</div>
+        <ul class="misc-list">
+          <li>I can tell you the exact water temperature for coffee is 82°c instead of 85°C.(I love thier boba tho)</li>
+          <li>My cat can shake hand with instructions.</li>
+          <li>I once spent a semeter optimizing a pour-over recipe using ANOVA. No regrets.</li>
+          <li>I believe the best debugging tool is a good cup of coffee and gum(Airwaves is the best).</li>
+          <li>I'm from Taiwan 🇹🇼 and yes, the food is as good as everyone says.</li>
+        </ul>
+      </div>
+
+      <!-- Bookshelf -->
+      <div class="misc-section">
+        <div class="misc-section-title">// on my mind lately</div>
+        <div class="misc-grid">
+          <div class="misc-item">
+            <span class="misc-icon">📖</span>
+            <div>
+              <strong>Intrinsic: A Manifesto to Reignite Our Inner Drive</strong>
+              <span>Sharath Jeevan — still the best mental model book I've read</span>
+            </div>
+          </div>
+          <div class="misc-item">
+            <span class="misc-icon">🎵</span>
+            <div>
+              <strong>Lo-fi + math = focus</strong>
+              <span>My actual productivity stack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="misc-back">
+        <a class="btn-link" href="index.html">← back to home</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Email bar -->
+  <div class="email-bar">
+    <span class="email-bar-label">✉ reach me</span>
+    <a class="email-pill" href="mailto:kl.suzy.huang@gmail.com">
+      <span class="email-pill-icon">◈</span>kl.suzy.huang@gmail.com
+    </a>
+    <span class="email-bar-sep">·</span>
+    <a class="email-pill edu" href="mailto:kl.huang@csu.fullerton.edu">
+      <span class="email-pill-icon">🎓</span>kl.huang@csu.fullerton.edu
+    </a>
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* ── Misc page ── */
+
+.misc-main {
+  position: relative;
+  z-index: 20;
+  width: min(580px, 86vw);
+  margin: 32px auto 100px;
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55);
+  overflow: hidden;
+}
+
+.misc-body {
+  padding: 22px 26px 28px;
+}
+
+.misc-title {
+  font-size: 1.1rem;
+  color: var(--green);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.misc-intro {
+  font-size: 0.78rem;
+  color: var(--dim);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+/* Section */
+.misc-section {
+  margin-bottom: 26px;
+}
+
+.misc-section-title {
+  font-size: 0.7rem;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+/* Grid items */
+.misc-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.misc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  transition: border-color 0.2s;
+}
+
+.misc-item:hover {
+  border-left-color: var(--yellow);
+}
+
+.misc-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.misc-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.misc-item strong {
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+.misc-item span {
+  font-size: 0.72rem;
+  color: var(--dim);
+  line-height: 1.5;
+}
+
+/* List */
+.misc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.misc-list li {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 16px;
+  position: relative;
+}
+
+.misc-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: bold;
+}
+
+/* Back */
+.misc-back {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
