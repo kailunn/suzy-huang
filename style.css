@@ -656,7 +656,7 @@ body {
 }
 
 
-/* ── News section ── */
+/* ── News section — vertical ticker ── */
 .news-section {
   position: relative;
   z-index: 20;
@@ -672,8 +672,8 @@ body {
 .news-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
+  gap: 8px;
+  padding: 10px 20px;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
@@ -686,6 +686,18 @@ body {
   text-transform: uppercase;
 }
 
+.news-live {
+  margin-left: auto;
+  font-size: 0.55rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 3px;
+  padding: 1px 5px;
+  animation: newsDotBlink 1.4s ease-in-out infinite;
+}
+
 .news-dot {
   width: 7px;
   height: 7px;
@@ -694,29 +706,62 @@ body {
   animation: newsDotBlink 1.4s ease-in-out infinite;
   flex-shrink: 0;
 }
-.news-dot:last-child { animation-delay: -0.7s; }
+.news-dot:last-of-type { animation-delay: -0.7s; }
 
 @keyframes newsDotBlink {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.3; transform: scale(0.7); }
 }
 
-.news-feed {
-  padding: 6px 0;
+/* Ticker window — fixed height showing ~5 items */
+.news-ticker-window {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  /* fade top and bottom edges */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
 }
 
+/* The scrolling track */
+.news-ticker-track {
+  display: flex;
+  flex-direction: column;
+  animation: tickerScroll 28s linear infinite;
+}
+
+.news-ticker-window:hover .news-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes tickerScroll {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Each news item */
 .news-item {
   display: flex;
   gap: 14px;
   align-items: flex-start;
   padding: 10px 20px;
   border-bottom: 1px dashed var(--border);
-  transition: background 0.15s;
+  flex-shrink: 0;
 }
 
 .news-item:last-child { border-bottom: none; }
-
-.news-item:hover { background: rgba(255,255,255,0.02); }
 
 .news-highlight {
   background: rgba(196,169,106,0.04);

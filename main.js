@@ -2,9 +2,9 @@
 const lines = [
   "Hi, I'm Suzy Huang. ☕",
   "",
-  "M.S. Computer Eng. · Cal State Fullerton(NOW!)",
-  "M.S. Chemical Eng. · NTHU, Taiwan",
-  "B.S. Chemical Eng + Quantitative Finance. · NTHU, Taiwan",
+  "M.S. Computer Eng. @ Cal State Fullerton(NOW!)",
+  "M.S. Chemical Eng. @ NTHU, Taiwan",
+  "B.S. Chemical Eng + Quantitative Finance. @ NTHU, Taiwan",
   "",
   "Ex-researcher @ NTHU · image processing & NDT.",
   "Ex-engineer @ ITRI · Physics AI & LLM eval.",
@@ -52,6 +52,14 @@ function renderBio(text) {
 }
 
 if (bioEl) setTimeout(typeNext, 600);
+
+// ── News ticker — duplicate items for seamless loop ──────────────────
+const track = document.getElementById('newsTickerTrack');
+if (track) {
+  // Clone all items and append so the scroll loops seamlessly
+  const items = Array.from(track.children);
+  items.forEach(item => track.appendChild(item.cloneNode(true)));
+}
 
 // ── Tooltip on sticker hover (simple) ───────────────────────────────
 const tooltip = document.getElementById('tooltip');

@@ -140,24 +140,24 @@
   <img class="sticker-img" src="photos/stickers/cat5.png" alt="calico cat"
        style="top:67%; left:1%;  --rot:-9deg;  --sz:172px;"
        data-tip="taste tester 😋"
-       data-story="She once tried to drink my pour-over. I respect the curiosity but had to explain that 82°C water and calico cats are not a good combination." />
+       data-story="She yells at me every day when I get home." />
 
   <!-- LEFT INNER column — offset vertically from left edge -->
   <img class="sticker-img" src="photos/stickers/me2.png" alt="Suzy"
        style="top:18%; left:15%; --rot:7deg;   --sz:162px;"
        data-tip="also me ✨"
-       data-story="Somewhere between a coffee experiment and a math problem, this is me. Probably thinking about pour ratios or eigenvalues. Possibly both." />
+       data-story="I have a Master's in chemical engineering, but somehow I ended up writing a thesis about mechanical engineering and deep learning. Don't ask me how.XD" />
 
   <img class="sticker-img" src="photos/stickers/me5.png" alt="Suzy"
        style="top:52%; left:15%; --rot:9deg;   --sz:158px;"
        data-tip="Suzy vibes ☕"
-       data-story="This is my 'I just had a really good cup of coffee and I'm ready to solve problems' face. The 82°C water temperature is non-negotiable." />
+       data-story="I'm really curious about how people end up finding their passions." />
 
   <!-- RIGHT INNER column -->
   <img class="sticker-img" src="photos/stickers/me4.png" alt="Suzy"
        style="top:10%; right:15%; --rot:-8deg; --sz:165px;"
        data-tip="Suzy 🌟"
-       data-story="M.S. Systems Engineering student by day, pour-over perfectionist by morning, puzzle enthusiast by night. Currently working on medical image generation research." />
+       data-story="It all happened so fast—I made the decision and moved to the US in only two months." />
 
   <img class="sticker-img" src="photos/stickers/cat7.png" alt="calico cat"
        style="top:44%; right:15%; --rot:-5deg; --sz:170px;"
@@ -243,66 +243,86 @@
       <span class="news-dot"></span>
       <span class="news-title">News!</span>
       <span class="news-dot"></span>
+      <span class="news-live">LIVE</span>
     </div>
 
-    <div class="news-feed">
+    <!-- ticker window — shows ~5 items, scrolls continuously -->
+    <div class="news-ticker-window" id="newsTickerWindow">
+      <div class="news-ticker-track" id="newsTickerTrack">
 
-      <div class="news-item news-highlight">
-        <span class="news-date">2024 · 03</span>
-        <div class="news-content">
-          <span class="news-badge badge-award">🏆 selected</span>
-          <p>Selected as a member of the <em>GenAI Task Force</em> at ITRI!</p>
+        <div class="news-item news-highlight">
+          <span class="news-date">2024 · 03</span>
+          <div class="news-content">
+            <span class="news-badge badge-award">🏆 selected</span>
+            <p>Selected as a member of the <em>GenAI Task Force</em> at ITRI!</p>
+          </div>
         </div>
-      </div>
 
-      <div class="news-item">
-        <span class="news-date">2023 · 02</span>
-        <div class="news-content">
-          <span class="news-badge badge-work">💼 joined</span>
-          <p>Joined the <em>Information and Communication Lab</em> at ITRI.</p>
+        <div class="news-item">
+          <span class="news-date">2024 · 05</span>
+          <div class="news-content">
+            <span class="news-badge badge-pub">� published</span>
+            <p>Published <em>"Optimization of UAV Battery Thermal Management System Based on Physics Informed Neural Network"</em> in Journal of Industrial Mechatronics. Thanks MCL &amp; ICL at ITRI!</p>
+          </div>
         </div>
-      </div>
 
-      <div class="news-item">
-        <span class="news-date">2023 · 02</span>
-        <div class="news-content">
-          <span class="news-badge badge-edu">🎓 degree</span>
-          <p>Received my <em>Master's degree</em> from NTHU!</p>
+        <div class="news-item">
+          <span class="news-date">2023 · 02</span>
+          <div class="news-content">
+            <span class="news-badge badge-work">💼 joined</span>
+            <p>Joined the <em>Information and Communication Lab</em> at ITRI.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="news-item">
-        <span class="news-date">2022 · 06</span>
-        <div class="news-content">
-          <span class="news-badge badge-pub">📄 published</span>
-          <p>Published <em>"Factor analysis thermography for defect detection of panel paintings"</em> at ESCAPE32. Thanks Prof. Yuan Yao!</p>
+        <div class="news-item">
+          <span class="news-date">2023 · 02</span>
+          <div class="news-content">
+            <span class="news-badge badge-edu">🎓 degree</span>
+            <p>Received my <em>Master's degree</em> from NTHU!</p>
+          </div>
         </div>
-      </div>
 
-      <div class="news-item">
-        <span class="news-date">2021 · 08</span>
-        <div class="news-content">
-          <span class="news-badge badge-pub">📄 published</span>
-          <p>Published <em>"Exploratory factor analysis for defect identification with active thermography"</em> in <em>Measurement Science and Technology</em>. Thanks Prof. Yuan Yao!</p>
+        <div class="news-item">
+          <span class="news-date">2022 · 06</span>
+          <div class="news-content">
+            <span class="news-badge badge-pub">📄 published</span>
+            <p>Published <em>"System Identification with Physics Informed Neural Network"</em> at ESCAPE32. Thanks Prof. David Wong &amp; Prof. Yuan Yao!</p>
+          </div>
         </div>
-      </div>
 
-      <div class="news-item">
-        <span class="news-date">2020</span>
-        <div class="news-content">
-          <span class="news-badge badge-pub">📄 published</span>
-          <p>Published <em>"Exploratory Factor Analysis of Infrared Thermographic Data for Defect Detection"</em>. Thanks Prof. Y. Yao!</p>
+        <div class="news-item">
+          <span class="news-date">2021 · 12</span>
+          <div class="news-content">
+            <span class="news-badge badge-pub">📄 published</span>
+            <p>Published <em>"Factor analysis thermography for defect detection of panel paintings"</em> in Taylor &amp; Francis. Thanks Prof. Yuan Yao!</p>
+          </div>
         </div>
-      </div>
 
-      <div class="news-item">
-        <span class="news-date">2020 · 06</span>
-        <div class="news-content">
-          <span class="news-badge badge-edu">🎓 degree</span>
-          <p>Received my <em>Bachelor's degree</em> from NTHU!</p>
+        <div class="news-item">
+          <span class="news-date">2021 · 07</span>
+          <div class="news-content">
+            <span class="news-badge badge-pub">📄 published</span>
+            <p>Published <em>"Exploratory factor analysis for defect identification with active thermography"</em> in Measurement Science and Technology. Thanks Prof. Yuan Yao!</p>
+          </div>
         </div>
-      </div>
 
+        <div class="news-item">
+          <span class="news-date">2020</span>
+          <div class="news-content">
+            <span class="news-badge badge-pub">📄 published</span>
+            <p>Published <em>"Exploratory Factor Analysis of Infrared Thermographic Data for Defect Detection"</em> at QIRT. Thanks Prof. Y. Yao!</p>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">2020 · 06</span>
+          <div class="news-content">
+            <span class="news-badge badge-edu">🎓 degree</span>
+            <p>Received my <em>Bachelor's degree</em> from NTHU!</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
   <div class="email-bar">
@@ -315,6 +335,7 @@
       <span class="email-pill-icon">🎓</span>kl.huang@csu.fullerton.edu
     </a>
   </div>
+
 
   <!-- ══════════════════════════════════════════
        FAB STACK
