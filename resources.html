@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Useful Resources — Suzy Huang</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="resources.css" />
+</head>
+<body class="resources-page">
+
+  <!-- floating stickers -->
+  <img class="sticker-img" src="photos/stickers/me2.png" alt="Suzy"
+       style="top:5%; left:2%; --rot:-6deg; --sz:150px;" data-tip="Suzy" />
+  <img class="sticker-img" src="photos/stickers/cat1.png" alt="cat"
+       style="top:5%; right:2%; --rot:7deg; --sz:155px;" data-tip="reading list approved 🐱" />
+  <img class="sticker-img" src="photos/stickers/cat7.png" alt="cat"
+       style="bottom:10%; left:2%; --rot:5deg; --sz:150px;" data-tip="cat7" />
+  <img class="sticker-img" src="photos/stickers/me5.png" alt="Suzy"
+       style="bottom:10%; right:2%; --rot:-6deg; --sz:148px;" data-tip="Suzy" />
+
+  <main class="resources-main">
+    <div class="terminal-bar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">suzy@huang ~ useful-resources</span>
+    </div>
+
+    <div class="resources-body">
+      <div class="prompt-line">
+        <span class="prompt">~/resources_</span>
+        <span class="cursor">▋</span>
+      </div>
+
+      <h1 class="resources-title">Useful Resources</h1>
+      <p class="resources-intro">Things I've found genuinely helpful — bookmarked, revisited, and recommended.</p>
+
+      <!-- Writing -->
+      <div class="res-section">
+        <div class="res-section-title">// academic writing</div>
+
+        <a class="res-card" href="https://github.com/writing-resources/awesome-scientific-writing" target="_blank" rel="noopener">
+          <div class="res-card-icon">✍</div>
+          <div class="res-card-body">
+            <div class="res-card-title">Awesome Scientific Writing</div>
+            <div class="res-card-desc">A curated GitHub list of tools, templates, and guides for writing papers — LaTeX, Markdown, reference managers, and more. Saved me hours.</div>
+            <div class="res-card-url">github.com/writing-resources/awesome-scientific-writing ↗</div>
+          </div>
+        </a>
+
+        <a class="res-card" href="https://careerservices.upenn.edu/application-materials-for-the-faculty-job-search/cvs-for-faculty-job-applications/" target="_blank" rel="noopener">
+          <div class="res-card-icon">📄</div>
+          <div class="res-card-body">
+            <div class="res-card-title">CVs for Faculty Job Applications</div>
+            <div class="res-card-desc">UPenn Career Services guide on writing academic CVs for faculty positions — structure, content, and what search committees actually look for.</div>
+            <div class="res-card-url">careerservices.upenn.edu ↗</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Math & Engineering -->
+      <div class="res-section">
+        <div class="res-section-title">// math & engineering</div>
+
+        <a class="res-card" href="https://www.youtube.com/watch?v=KmHgP47M8Cc" target="_blank" rel="noopener">
+          <div class="res-card-icon">▶</div>
+          <div class="res-card-body">
+            <div class="res-card-title">YouTube — Engineering / Math Video</div>
+            <div class="res-card-desc">A great explainer video on engineering or math concepts. Clear, visual, and worth the watch if you want to build intuition fast.</div>
+            <div class="res-card-url">youtube.com ↗</div>
+          </div>
+        </a>
+
+        <a class="res-card" href="https://www.youtube.com/@Eigensteve" target="_blank" rel="noopener">
+          <div class="res-card-icon">∑</div>
+          <div class="res-card-body">
+            <div class="res-card-title">Eigensteve — Steve Brunton's Channel</div>
+            <div class="res-card-desc">Prof. Steve Brunton (UW) teaches data-driven methods, linear algebra, control theory, and machine learning with exceptional clarity. One of the best math channels on YouTube.</div>
+            <div class="res-card-url">youtube.com/@Eigensteve ↗</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="resources-back">
+        <a class="btn-link" href="index.html">← back to home</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Email bar -->
+  <div class="email-bar">
+    <span class="email-bar-label">✉ reach me</span>
+    <a class="email-pill" href="mailto:kl.suzy.huang@gmail.com">
+      <span class="email-pill-icon">◈</span>kl.suzy.huang@gmail.com
+    </a>
+    <span class="email-bar-sep">·</span>
+    <a class="email-pill edu" href="mailto:kl.huang@csu.fullerton.edu">
+      <span class="email-pill-icon">🎓</span>kl.huang@csu.fullerton.edu
+    </a>
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+  <script src="main.js"></script>
+</body>
+</html>

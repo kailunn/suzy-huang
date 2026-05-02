@@ -34,12 +34,14 @@ body {
   z-index: 30;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  gap: 14px;
   padding-top: 18px;
   margin-bottom: -28px;
 }
 
 .hero-photo img {
-  height: 480px;
+  height: 300px;
   width: auto;
   filter: drop-shadow(0 0 20px rgba(200,191,176,0.3))
           drop-shadow(0 4px 28px rgba(0,0,0,0.65));
@@ -51,6 +53,60 @@ body {
   transform: scale(1.05);
   filter: drop-shadow(0 0 32px rgba(196,169,106,0.5))
           drop-shadow(0 6px 32px rgba(0,0,0,0.75));
+}
+
+/* LinkedIn badge next to hero photo */
+.hero-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.hero-linkedin,
+.hero-instagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: inherit;
+  animation: stickerFloat 6s ease-in-out infinite;
+}
+
+.hero-instagram { animation-delay: -1s; }
+.hero-linkedin  { animation-delay: -2s; }
+
+.hero-linkedin small,
+.hero-instagram small {
+  font-size: 0.6rem;
+  letter-spacing: 0.07em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero-linkedin small { color: #7a9aaa; }
+.hero-instagram small { color: #c4a96a; }
+
+/* Instagram badge */
+.ig-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 3px rgba(253,29,29,0.2),
+              0 4px 16px rgba(131,58,180,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-instagram:hover .ig-badge {
+  transform: scale(1.15) rotate(-4deg);
+  box-shadow: 0 0 0 4px rgba(253,29,29,0.35),
+              0 8px 28px rgba(131,58,180,0.6);
 }
 
 @keyframes heroFloat {
@@ -501,24 +557,47 @@ body {
 ══════════════════════════════════════════ */
 @media (max-width: 640px) {
 
-  /* Hide ALL fixed stickers and illustrations — too cluttered on small screens */
-  .sticker-img,
-  .sticker-linkedin,
-  .illus { display: none !important; }
+  /* Hide SVG illustrations and LinkedIn badge — keep photo stickers */
+  .illus,
+  .sticker-linkedin { display: none !important; }
 
-  /* Body — no side padding needed without stickers */
+  /* Body */
   body { padding-bottom: 140px; }
 
-  /* Hero photo — smaller, less top padding */
+  /* Hero photo */
   .hero-photo { padding-top: 16px; margin-bottom: -10px; }
-  .hero-photo img { height: 200px; }
+  .hero-photo img { height: 180px; }
 
-  /* Terminal — full width, no vertical centering trick */
-  .terminal {
-    width: 92vw;
-    margin-top: 20px;
+  /* Photo stickers — switch from fixed to static, show as a horizontal scroll strip */
+  .sticker-img {
+    position: static !important;
+    display: inline-block !important;
+    width: 80px !important;
+    height: auto !important;
+    transform: none !important;
+    animation: none !important;
+    margin: 4px;
+    vertical-align: top;
+    flex-shrink: 0;
   }
 
+  /* Wrap all stickers in a scrollable row */
+  .sticker-strip {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 6px;
+    padding: 8px 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .sticker-strip::-webkit-scrollbar { display: none; }
+
+  /* Terminal — full width */
+  .terminal {
+    width: 92vw;
+    margin-top: 16px;
+  }
   .terminal-body { padding: 16px 16px 18px; }
   .bio { font-size: 0.82rem; }
 
@@ -532,7 +611,7 @@ body {
   .news-item { padding: 8px 14px; gap: 10px; }
   .news-content p { font-size: 0.74rem; }
 
-  /* FAB stack — horizontal row at bottom, above email bar */
+  /* FAB stack — horizontal row pinned above email bar */
   .fab-stack {
     position: fixed;
     bottom: 52px;
@@ -549,14 +628,12 @@ body {
     align-items: center;
   }
 
-  /* FAB buttons — compact on mobile */
   .recipe-fab, .research-fab, .misc-fab, .cv-fab, .news-fab, .manna-fab {
     font-size: 0.65rem;
     padding: 6px 10px 6px 8px;
     gap: 5px;
   }
 
-  /* Hide multi-line fab text line breaks */
   .fab-text br { display: none; }
 
   /* Email bar */
@@ -727,3 +804,32 @@ body {
   line-height: 1.4;
   transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.2s;
 }
+
+/* ── Resources FAB ── */
+.resources-fab {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 50px;
+  padding: 9px 16px 9px 12px;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 0.73rem;
+  font-weight: bold;
+  line-height: 1.4;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.2s;
+  background: var(--bg2);
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
+  box-shadow: 0 4px 18px rgba(122,154,170,0.22), 0 2px 8px rgba(0,0,0,0.4);
+  animation: fabGlowBlue 3s ease-in-out infinite;
+  animation-delay: -0.6s;
+}
+
+.resources-fab:hover {
+  transform: scale(1.07) translateY(-2px);
+  background: #28303d;
+  box-shadow: 0 8px 28px rgba(122,154,170,0.42), 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.resources-fab .fab-star { animation: none; font-size: 1rem; }
