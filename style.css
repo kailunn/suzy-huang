@@ -250,7 +250,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.55);
   overflow: hidden;
-  margin-top: calc(50vh - 390px);
+  margin-top: 32px;
+  margin-bottom: 0;
 }
 
 .terminal-bar {
@@ -596,13 +597,13 @@ body {
   /* Terminal — full width */
   .terminal {
     width: 92vw;
-    margin-top: 16px;
+    margin-top: 32px;
   }
   .terminal-body { padding: 16px 16px 18px; }
   .bio { font-size: 0.82rem; }
 
   /* Manna slot */
-  .manna-inline { width: 92vw; padding: 16px 16px 18px; margin: 16px auto 20px; }
+  .manna-inline { width: 92vw; padding: 16px 16px 18px; margin: 32px auto 0; }
   .slot-reel-inline { width: 50px; height: 50px; }
   .reel-inner-inline span { font-size: 1.4rem; }
 
@@ -661,7 +662,7 @@ body {
   position: relative;
   z-index: 20;
   width: min(520px, 86vw);
-  margin: 0 auto 28px;
+  margin: 32px auto 0;
   background: var(--bg2);
   border: 1.5px solid var(--border);
   border-radius: 12px;

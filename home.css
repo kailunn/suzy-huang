@@ -58,7 +58,7 @@
   position: relative;
   z-index: 20;
   width: min(460px, 86vw);
-  margin: 28px auto 100px;
+  margin: 32px auto 0;
   background: var(--bg2);
   border: 1.5px solid var(--yellow);
   border-radius: 16px;
